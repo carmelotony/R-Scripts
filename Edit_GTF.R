@@ -1,0 +1,5 @@
+ToxGTF <- read.delim2(file.choose(), header = FALSE, comment.char = "#")
+head(ToxGTF)
+ToxGTF_edit <- as.data.frame(sapply(ToxGTF,gsub,pattern="gene:",replacement=""))
+head(ToxGTF_edit)
+write.table(ToxGTF_edit, quote = FALSE, file = "ToxoDB7.1.35_ME49_Full_GTFconvert_NoPseudo_GeneIDedit", sep = "\t", row.names = FALSE, col.names = FALSE)
